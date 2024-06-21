@@ -54,6 +54,7 @@ public class EstruturadeDecisao {
             System.out.println(data+" esse dia esta por vir");
         }else{
             System.out.println(data+" esse dia ja passou");
+            System.out.println("teste");
         }
     }
 }
