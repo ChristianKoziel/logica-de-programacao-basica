@@ -1,15 +1,39 @@
 package com.orientacaoaobjeto;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 public class CadastroDePessoa {
-    public static void main (String[] Args)throws ParseException {
-        Pessoa zumba = new Pessoa();
-        zumba.setNome("Zumba Games");
-        zumba.setSexo("masculino");
-        zumba.mudarNome("Joaozinho");
-        zumba.setDataDeNascimento(new SimpleDateFormat("dd/MM/yyyy").parse("02/02/2021"));
-        System.out.println(zumba.getDataDeNascimento());
+    Maternidade maternidade = new Maternidade();
+    ArrayList<Pessoa> pessoaList = new ArrayList<>();
+    public static void main (String[] Args) throws ParseException {
+        new CadastroDePessoa().rodar();
+    }
+
+    private void rodar() throws ParseException {
+        Pessoa zumba = maternidade.nascer("Zumba Games", "Masculino");
+        Pessoa zefrina = maternidade.nascer("Zefrina Silma", "Feminino");
+        Pessoa joao = maternidade.nascer("Joao Silva", "Masculino");
+        Pessoa robo = maternidade.nascer("Robo Android", "Robo");
+
+        pessoaList.add(zumba);
+        pessoaList.add(zefrina);
+        pessoaList.add(joao);
+        pessoaList.add(robo);
+
+        ArrayList<Pessoa> homemList = new ArrayList<>();
+        ArrayList<Pessoa> mulherList = new ArrayList<>();
+        ArrayList<Pessoa> outrosGenerosList = new ArrayList<>();
+        for (Pessoa pessoa : pessoaList){
+             if (pessoa.getSexo().equals("Masculino")){
+                 homemList.add(pessoa);
+             }else if(pessoa.getSexo().equals("Feminino")){
+                 mulherList.add(pessoa);
+             }else{
+                 outrosGenerosList.add(pessoa);
+             }
+        }
     }
 }
+
+
