@@ -2,7 +2,7 @@ package com.orientacaoaobjeto;
 
 import java.util.Date;
 
-public class pessoa {
+public class Pessoa {
     private String nome;
 
     public String getSexo() {
@@ -38,4 +38,4 @@ public class pessoa {
     void casar(String antigoSobrenome, String novoSobrenome) {
         nome = nome.replace(antigoSobrenome, novoSobrenome);
     }
-} 
+}
